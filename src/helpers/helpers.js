@@ -1,13 +1,12 @@
 export const calcNums = (num1, num2, operator) => {
   switch (operator) {
-    case '+':
-      return num1 + num2
-
-    case '-':
-      return num1 - num2
-
-    case '*':
-      return num1 * num2
+    case '+': return num1 + num2
+    case '-': return num1 - num2
+    case '*': return num1 * num2
+    case '/':
+      if (num2 === 0) throw new Error('Division by zero')
+      return Math.floor(num1 / num2)
+    default: throw new Error(`Unknown operator: ${operator}`)
   }
 }
 
