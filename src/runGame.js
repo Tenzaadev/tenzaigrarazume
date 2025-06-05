@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync'
 
 const runGame = (description, generateQuestion) => {
+  console.log('Welcome to the Brain Games!')
   const name = readlineSync.question('May I have your name? ')
   console.log(`Hello, ${name}!`)
   console.log(description)
-  // ... rest remains the same
 
   const roundsCount = 3
 
@@ -14,7 +14,8 @@ const runGame = (description, generateQuestion) => {
     const userAnswer = readlineSync.question('Your answer: ')
 
     if (String(userAnswer) !== String(correctAnswer)) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`)
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
+      console.log(`Let's try again, ${name}!`)
       return // Завершаем игру при неправильном ответе
     }
     console.log('Correct!')
